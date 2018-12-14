@@ -1,0 +1,34 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8811/eureka/
+
+spring:
+  application:
+    name: qyjcloud-zuul
+
+server:
+  port: 8841
+
+zuul:
+  routes:
+    service-user:
+      path: /user/**
+      serviceId: qyjcloud-service-user
+    service-goods:
+      path: /goods/**
+      serviceId: qyjcloud-service-goods
+    auth:
+      path: /auth/**
+      serviceId: qyjcloud-auth
+  add-proxy-headers: true
+  sensitive-headers:
+
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:8841/auth/oauth/token
+      user-authorization-uri: http://localhost:8841/auth/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:8841/auth/user
+      prefer-token-info: false

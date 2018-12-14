@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: qyjcloud-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/helloaija/cloud-parent
+          searchPaths: /config-resp
+          username:
+          password:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8851
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8811/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+  endpoint:
+    bus-refresh:
+      enabled: true

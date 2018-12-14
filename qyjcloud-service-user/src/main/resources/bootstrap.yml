@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      name: client-app, instance-message
+      label: master
+      profile: dev
+      discovery:
+        enabled: true # 启用发现服务功能
+        serviceId: qyjcloud-config # 指定服务名称
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8811/eureka/

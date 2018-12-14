@@ -1,0 +1,28 @@
+
+server:
+  port: 8822
+spring:
+  application:
+    name: qyjcloud-service-goods
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: qyjcloud-config
+      profile: dev
+      label: master
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8841/auth/users
+    client:
+      access-token-uri: http://localhost:8841/auth/oauth/token
+      user-authorization-uri: http://localhost:8841/auth/oauth/authorize
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE

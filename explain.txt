@@ -1,0 +1,6 @@
+http://localhost:8831/oauth/token?client_id=service-feign&client_secret=123456&grant_type=password&username=user&password=123456
+http://localhost:8831/oauth/check_token?token=f57ce129-2d4d-4bd7-1111-f31ccc69d4d1
+http://localhost/oauth/token?grant_type=refresh_token&refresh_token=fbde81ee-f419-42b1-1234-9191f1f95be9&client_id=demoClientId&client_secret=demoClientSecret
+
+
+http://localhost:8841/user/actuator/bus-refresh

@@ -1,0 +1,46 @@
+
+server:
+  port: 8821
+spring:
+  application:
+    name: qyjcloud-service-user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: qyjcloud-config
+      profile: dev
+      label: master
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8841/auth/users
+    client:
+      access-token-uri: http://localhost:8841/auth/oauth/token
+      user-authorization-uri: http://localhost:8841/auth/oauth/authorize
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"

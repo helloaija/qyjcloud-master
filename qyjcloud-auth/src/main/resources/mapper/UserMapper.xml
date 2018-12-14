@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qyj.qyjcloud.qyjcloudauth.mapper.UserMapper">
+
+    <resultMap id="baseMap" type="com.qyj.qyjcloud.qyjcloudauth.entity.UserEntity">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <resultMap id="userAndRoleMap" type="com.qyj.qyjcloud.qyjcloudauth.entity.UserEntity">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <collection property="roleList" column="id" select="com.qyj.qyjcloud.qyjcloudauth.mapper.RoleMapper.listRoleByUserId"
+                    ofType="com.qyj.qyjcloud.qyjcloudauth.entity.RoleEntityEntity"/>
+    </resultMap>
+
+    <sql id="tableColumns">
+        id, username, password
+    </sql>
+
+    <!--根据用户名查询用户信息-->
+    <select id="findByUsername" parameterType="java.lang.String" resultMap="baseMap">
+        select <include refid="tableColumns"/> from t_user where username = #{username}
+   </select>
+
+    <!--根据用户ID查询用户信息-->
+    <select id="getUserByUserId" parameterType="java.lang.Long" resultMap="baseMap">
+        select <include refid="tableColumns"/> from t_user where id = #{userId}
+    </select>
+</mapper>

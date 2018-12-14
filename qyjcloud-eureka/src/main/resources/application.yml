@@ -1,0 +1,77 @@
+server:
+  port: 8811
+
+spring:
+  application:
+    name: qyjcloud-eureka
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+#server:
+#  port: 8811
+#
+#spring:
+#  application:
+#    name: eureka-server
+#  profiles: eureka-profile-1
+#
+#eureka:
+#  instance:
+#    hostname: eureka-server-1
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://eureka-server-2:8812/eureka/,http://eureka-server-3:8813/eureka/
+#  server:
+#    #关闭自我保护模式，90秒没有收到心跳连接就移除服务
+#    enable-self-preservation: false
+#
+#---
+#
+#server:
+#  port: 8812
+#
+#spring:
+#  application:
+#    name: eureka-server
+#  profiles: eureka-profile-2
+#
+#eureka:
+#  instance:
+#    hostname: eureka-server-2
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://eureka-server-1:8811/eureka/,http://eureka-server-3:8813/eureka/
+#
+#---
+#
+#server:
+#  port: 8813
+#
+#spring:
+#  application:
+#    name: eureka-server
+#  profiles: eureka-profile-3
+#
+#eureka:
+#  instance:
+#    hostname: eureka-server-3
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://eureka-server-1:8811/eureka/,http://eureka-server-2:8812/eureka/
+
+
