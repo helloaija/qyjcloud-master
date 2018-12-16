@@ -16,7 +16,7 @@ spring:
       trace:
         enabled: true
   rabbitmq:
-    host: localhost
+    host: 192.168.80.128
     port: 5672
     username: guest
     password: guest
@@ -28,6 +28,11 @@ security:
     client:
       access-token-uri: http://localhost:8841/auth/oauth/token
       user-authorization-uri: http://localhost:8841/auth/oauth/authorize
+
+#开启断路器
+feign:
+  hystrix:
+    enabled: true
 
 hystrix:
   command:

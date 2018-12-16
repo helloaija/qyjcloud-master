@@ -13,6 +13,8 @@
         <module>qyjcloud-auth</module>
         <module>qyjcloud-service-user</module>
         <module>qyjcloud-service-goods</module>
+        <module>qyjcloud-config</module>
+        <module>qyjcloud-zuul</module>
     </modules>
 
     <parent>

@@ -11,6 +11,11 @@ spring:
         service-id: qyjcloud-config
       profile: dev
       label: master
+  rabbitmq:
+    host: 192.168.80.128
+    port: 5672
+    username: guest
+    password: guest
 
 security:
   oauth2:
@@ -26,3 +31,8 @@ hystrix:
       execution:
         isolation:
           strategy: SEMAPHORE
+
+#开启断路器
+feign:
+  hystrix:
+    enabled: true
