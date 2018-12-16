@@ -12,7 +12,7 @@ spring:
       profile: dev
       label: master
   rabbitmq:
-    host: 192.168.80.128
+    host: stl.server.com
     port: 5672
     username: guest
     password: guest
