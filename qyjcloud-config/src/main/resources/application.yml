@@ -6,8 +6,8 @@ spring:
       label: master
       server:
         git:
-          uri: https://github.com/helloaija/cloud-parent
-          searchPaths: /config-resp
+          uri: https://github.com/helloaija/qyjcloud-master
+          searchPaths: /qyjcloud-config-resp
           username:
           password:
     bus:
