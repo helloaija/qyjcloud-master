@@ -13,3 +13,11 @@ http://192.168.80.128:15672
 
 http://localhost:8841/user/hello/helloConfig
 http://localhost:8841/goods/hello/helloConfig
+
+创建eureka容器并启动
+docker run -d -p 8811:8811 -v /usr/local/jars/qyjcloud-eureka-1.0-SNAPSHOT.jar:/usr/local/qyjcloud-eureka-1.0-SNAPSHOT.jar --name qyjcloud-eureka1 java:openjdk-8-jdk-alpine java -jar /usr/local/qyjcloud-eureka-1.0-SNAPSHOT.jar --spring.profiles.active=eureka-profile-1
+docker run -d -p 8812:8812 -v /usr/local/jars/qyjcloud-eureka-1.0-SNAPSHOT.jar:/usr/local/qyjcloud-eureka-1.0-SNAPSHOT.jar --name qyjcloud-eureka2 java:openjdk-8-jdk-alpine java -jar /usr/local/qyjcloud-eureka-1.0-SNAPSHOT.jar --spring.profiles.active=eureka-profile-2
+docker run -d -p 8813:8813 -v /usr/local/jars/qyjcloud-eureka-1.0-SNAPSHOT.jar:/usr/local/qyjcloud-eureka-1.0-SNAPSHOT.jar --name qyjcloud-eureka3 java:openjdk-8-jdk-alpine java -jar /usr/local/qyjcloud-eureka-1.0-SNAPSHOT.jar --spring.profiles.active=eureka-profile-3
+docker start qyjcloud-eureka1
+docker start qyjcloud-eureka2
+docker start qyjcloud-eureka3
