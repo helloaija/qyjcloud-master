@@ -21,3 +21,8 @@ docker run -d -p 8813:8813 -v /usr/local/jars/qyjcloud-eureka-1.0-SNAPSHOT.jar:/
 docker start qyjcloud-eureka1
 docker start qyjcloud-eureka2
 docker start qyjcloud-eureka3
+
+
+链路跟踪
+zipkin.base-url=http://stl.server.com:9411/
+zipkin.sender.type: web

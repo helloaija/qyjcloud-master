@@ -20,6 +20,13 @@ spring:
     port: 5672
     username: guest
     password: guest
+  zipkin:
+    base-url: http://stl.server.com:9411/
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1.0
 
 security:
   oauth2:
