@@ -26,3 +26,10 @@ docker start qyjcloud-eureka3
 链路跟踪
 zipkin.base-url=http://stl.server.com:9411/
 zipkin.sender.type: web
+
+
+断路器监控
+监控数据 http://localhost:8822/actuator/hystrix.stream
+图形界面 http://localhost:8822/hystrix
+断路器聚合监控
+http://localhost:8861/turbine.stream

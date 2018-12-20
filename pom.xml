@@ -15,6 +15,7 @@
         <module>qyjcloud-service-goods</module>
         <module>qyjcloud-config</module>
         <module>qyjcloud-zuul</module>
+        <module>qyjcloud-turbine</module>
     </modules>
 
     <parent>

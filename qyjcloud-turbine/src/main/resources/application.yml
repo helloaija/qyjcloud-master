@@ -1,0 +1,28 @@
+server:
+  port: 8861
+
+spring:
+  application:
+    name: qyjcloud-turbine
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8811/eureka/
+
+turbine:
+  app-config: qyjcloud-service-user, qyjcloud-service-goods
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+  instanceUrlSuffix: actuator/hystrix.stream
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
